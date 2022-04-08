@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.5.1",
     "next": "12.1.2",
     "prettier": "^2.6.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-is": "^18.0.0",
+    "react-swipeable": "^6.2.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

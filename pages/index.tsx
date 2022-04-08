@@ -1,10 +1,45 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useSwipeable, UP, DOWN, SwipeEventData } from "react-swipeable";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const Home: NextPage = () => {
   const [scrollCount, setScrollCount] = useState(0);
   const [actualView, setActualView] = useState(0);
+
+  // const swipeHandlers = useSwipeable({
+  //   onSwipedDown: (e: SwipeEventData) => {
+  //     alert(e.dir);
+  //     setActualView((prevState) => {
+  //       return prevState < 2 ? prevState + 1 : prevState;
+  //     });
+  //   },
+  //   onSwipedUp: (e: SwipeEventData) => {
+  //     alert(e.dir);
+  //     setActualView((prevState) => {
+  //       return prevState > 0 ? prevState - 1 : prevState;
+  //     });
+  //   },
+  // });
+
+  const swipeHandlers = useSwipeable({
+    onSwiped: (event: SwipeEventData) => {
+      console.log(event.dir);
+      if (event.dir === UP) {
+        setActualView((prevState) => {
+          return prevState < 2 ? prevState + 1 : prevState;
+        });
+      } else if (event.dir === DOWN) {
+        setActualView((prevState) => {
+          return prevState > 0 ? prevState - 1 : prevState;
+        });
+      }
+    },
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
 
   const handleScroll = (event: any) => {
     setScrollCount((prevState) => {
@@ -44,10 +79,90 @@ const Home: NextPage = () => {
       <div
         id="slider"
         style={{ transform: `translateY(-${actualView * 100}%)` }}
+        {...swipeHandlers}
       >
-        <div>issou</div>
-        <div>la</div>
-        <div>chancla</div>
+        <SliderElement style={{ background: "#4e54c8" }}>
+          <div
+            className="content"
+            style={{ animation: actualView === 0 ? "Appearing 2s 1" : "none" }}
+          >
+            <h2>Matériel</h2>
+            <p>
+              J'intervient sur vos PC portables et PC de bureau pour le
+              diagnostic et les pannes en tout genre.
+            </p>
+            <ul>
+              <li>Diagnostic Panne</li>
+              <li>PC sur mesure</li>
+              <li>Conseils d'achats</li>
+              <li>
+                Remplacement composant défectueux (clavier, écran, carte
+                vidéo... etc.)
+              </li>
+              <li>Nettoyage</li>
+              <li>Amélioration du PC (SSD, GPU, CPU... etc.)</li>
+            </ul>
+          </div>
+          <div id="lines-container">
+            <div className="lines">
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+            </div>
+          </div>
+        </SliderElement>
+        <SliderElement>
+          <div
+            className="content"
+            style={{ animation: actualView === 1 ? "Appearing 2s 1" : "none" }}
+          >
+            <h2>Logiciel</h2>
+            <p>
+              Ordinateur lent ? Infection par un virus informatique ?
+              j'intervient chez vous rapidement !
+            </p>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div id="virus_animation"></div>
+        </SliderElement>
+        <SliderElement>
+          <div
+            className="content"
+            style={{ animation: actualView === 2 ? "Appearing 2s 1" : "none" }}
+          >
+            <h2>Logiciel</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+              exercitationem?
+            </p>
+            <ul></ul>
+          </div>
+          <div className="area">
+            <ul className="circles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </SliderElement>
       </div>
     </MainContainer>
   );
@@ -60,12 +175,50 @@ const MainContainer = styled.main`
   #slider {
     height: 100vh;
     transition: 0.5s;
+  }
+`;
 
-    div {
-      height: 100vh;
-      width: 100vw;
-      background: midnightblue;
-      color: red;
+const SliderElement = styled.section`
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  overflow: hidden;
+  position: relative;
+
+  .content {
+    position: absolute;
+    margin: auto;
+    z-index: 2;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 30px 0;
+    }
+    h2,
+    p,
+    li {
+      text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
+    }
+    li:before {
+      content: "- ";
+    }
+
+    h2 {
+      letter-spacing: 7px;
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    li {
+      font-size: 1.2rem;
     }
   }
 `;

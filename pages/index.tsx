@@ -128,10 +128,12 @@ const Home: NextPage = () => {
               j'intervient chez vous rapidement !
             </p>
             <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>Nettoyage Malware & Virus informatiques</li>
+              <li>Réinstallation complète Windows toutes versions</li>
+              <li>Pannes logicielles</li>
+              <li>Installation logicielle</li>
+              <li>Récupération de données</li>
+              <li>Optimisation des performances PC</li>
             </ul>
           </div>
           <div id="virus_animation"></div>
@@ -141,12 +143,19 @@ const Home: NextPage = () => {
             className="content"
             style={{ animation: actualView === 2 ? "Appearing 2s 1" : "none" }}
           >
-            <h2>Logiciel</h2>
+            <h2>Assistance</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-              exercitationem?
+              Besoin d'un coup de main ? Nous installons ensemble vos
+              équipements (Box, TV, CPL... etc.) Je suis également à votre
+              disposition Pour vous apprendre les fondements de l'informatique.
             </p>
-            <ul></ul>
+            <ul>
+              <li>Installation et configuration internet & TV</li>
+              <li>Gestion de périphériques</li>
+              <li>Cablâge réseau domestique</li>
+              <li>Prise en main du matériel</li>
+              <li>Maintenance</li>
+            </ul>
           </div>
           <div className="area">
             <ul className="circles">
@@ -191,7 +200,9 @@ const SliderElement = styled.section`
   position: relative;
 
   .content {
+    padding: 0 15px;
     position: absolute;
+    max-width: calc(100vw - 15px);
     margin: auto;
     z-index: 2;
     ul {

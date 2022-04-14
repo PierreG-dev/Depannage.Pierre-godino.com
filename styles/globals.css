@@ -15,6 +15,53 @@ h1, h2, h3, h4, h5 {
     100% {opacity: 1}
 }
 
+#navbar_logo {
+  width: 50px;
+  height: auto;
+  filter: grayscale(0.4);
+  transition: 0.2s;;
+}
+
+#navbar_logo:hover {
+  cursor: pointer;
+  filter: grayscale(0);
+}
+
+.MuiMenuItem-root {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.MuiMenuItem-root a {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-decoration: none;
+  color: #373737;
+}
+
+
+.css-1t6c9ts {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5vw;
+  padding-left: 15vw;
+  
+}
+
+.css-1t6c9ts a {
+  color: #fafafa;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.1s;
+}
+
+.css-1t6c9ts a:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
 
 /*------------------------------------------------------*/
 

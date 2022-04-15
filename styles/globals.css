@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
+}
+
+a {
+  cursor: pointer !important;
 }
 
 h1, h2, h3, h4, h5 {

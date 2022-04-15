@@ -14,16 +14,16 @@ import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 
 const pages = [
-  <Link className="navbar-links" href={"/hardware"} key={1}>
+  <Link href={"/hardware"} key={1}>
     Matériel
   </Link>,
-  <Link className="navbar-links" href={"/software"} key={2}>
+  <Link href={"/software"} key={2}>
     Logiciel
   </Link>,
-  <Link className="navbar-links" href={"/help"} key={3}>
+  <Link href={"/help"} key={3}>
     Assistance
   </Link>,
-  <Link className="navbar-links" href={"/contact"} key={4}>
+  <Link href={"/contact"} key={4}>
     Contact
   </Link>,
 ];
@@ -58,7 +58,7 @@ const ResponsiveAppBar = () => {
         background: "rgba(0,0,0,0.3)",
         position: "fixed",
         top: 0,
-        zIndex: 10,
+        zIndex: 100,
       }}
     >
       <Container maxWidth="xl">
@@ -99,18 +99,20 @@ const ResponsiveAppBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+              {pages.map((page, key) => (
+                <MenuItem key={key} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <img src="/logo.png" alt="" id="navbar_logo" />
+          <Link href={"/"}>
+            <img src="/logo.png" alt="" id="navbar_logo" />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, key) => (
               <Button
-                key={page}
+                key={key}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >

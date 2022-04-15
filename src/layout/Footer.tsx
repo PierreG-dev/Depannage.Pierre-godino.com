@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 const Footer = () => {
   return (
@@ -74,6 +75,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <ChevronUp>
+          <ExpandLessIcon style={{ marginBottom: -19 }} />
+          <ExpandLessIcon />
+        </ChevronUp>
       </footer>
     </MainContainer>
   );
@@ -91,6 +96,22 @@ const MainContainer = styled.div`
   &:hover {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+  }
+`;
+
+const ChevronUp = styled.div`
+  position: absolute;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  transition: 0.2s;
+
+  footer:hover & {
+    opacity: 0;
   }
 `;
 

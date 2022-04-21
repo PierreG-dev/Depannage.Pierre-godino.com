@@ -4,8 +4,7 @@ import styled from "styled-components";
 const Contact = () => {
   return (
     <MainContainer>
-      <div className="text-center w-full"></div>
-      <div className="max-w-screen-xl px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg pb-24">
+      <div className="mt-10 max-w-screen-xl px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg pb-24">
         <div className="flex flex-col justify-between">
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
@@ -65,11 +64,11 @@ const Contact = () => {
                 </li>
                 <li>
                   <strong>Samedi :</strong>{" "}
-                  <i className="text-red-700">Fermé</i>
+                  <i className="text-red-700 ml-3">Fermé</i>
                 </li>
                 <li>
                   <strong>Dimanche :</strong>{" "}
-                  <i className="text-red-700">Fermé</i>
+                  <i className="text-red-700 ml-3">Fermé</i>
                 </li>
               </ul>
             </div>
@@ -116,10 +115,22 @@ const Contact = () => {
 const MainContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: #373737;
+  background: url("/ressources/contact-background.png");
   margin: 0;
   padding: 0;
   padding-top: 10vh;
+
+  h2 {
+    letter-spacing: 5px;
+  }
+
+  li {
+    letter-spacing: 1px;
+  }
+
+  strong {
+    letter-spacing: 3px;
+  }
 `;
 
 export default Contact;

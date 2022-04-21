@@ -152,7 +152,7 @@ const MainContainer = styled.div`
     h2 {
       font-size: 2rem;
       letter-spacing: 5px;
-
+      margin-bottom: 10px;
       span {
         margin-right: 10px;
         color: #cc854c;

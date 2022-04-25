@@ -87,7 +87,7 @@ const Footer = () => {
 const MainContainer = styled.div`
   position: fixed;
   z-index: 1000;
-  transform: translate3d(0, 80%, 0);
+  transform: translate3d(0, 85%, 0);
   opacity: 0.4;
   transition: 0.3s;
   bottom: 0;

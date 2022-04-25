@@ -1,9 +1,16 @@
-import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { useSwipeable, UP, DOWN, SwipeEventData } from 'react-swipeable';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import type { NextPage } from "next";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { useSwipeable, UP, DOWN, SwipeEventData } from "react-swipeable";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLaptop,
+  faGears,
+  faHandHoldingHand,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Home: NextPage = () => {
   const [scrollCount, setScrollCount] = useState(0);
@@ -29,7 +36,7 @@ const Home: NextPage = () => {
       console.log(event.dir);
       if (event.dir === UP) {
         setActualView((prevState) => {
-          return prevState < 2 ? prevState + 1 : prevState;
+          return prevState < 3 ? prevState + 1 : prevState;
         });
       } else if (event.dir === DOWN) {
         setActualView((prevState) => {
@@ -46,23 +53,23 @@ const Home: NextPage = () => {
       if (event.deltaY < 0) {
         return prevState > 0 ? prevState - 1 : prevState;
       } else {
-        return prevState < 8 ? prevState + 1 : prevState;
+        return prevState < 12 ? prevState + 1 : prevState;
       }
     });
     console.log(event.deltaY);
   };
 
   const handleKeyDown = (event: any) => {
-    if (event.key === 'g' || event.key === 'G') setScrollCount(0);
+    if (event.key === "g" || event.key === "G") setScrollCount(0);
   };
 
   useEffect(() => {
-    window.addEventListener('wheel', handleScroll);
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("wheel", handleScroll);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('wheel', handleScroll);
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -70,6 +77,7 @@ const Home: NextPage = () => {
     if (scrollCount < 4) setActualView(0);
     else if (scrollCount < 8) setActualView(1);
     else if (scrollCount < 12) setActualView(2);
+    else if (scrollCount < 16) setActualView(3);
 
     console.log(scrollCount);
   }, [scrollCount]);
@@ -81,11 +89,57 @@ const Home: NextPage = () => {
         style={{ transform: `translate3d(0,-${actualView * 100}%,0)` }}
         {...swipeHandlers}
       >
-        <SliderElement></SliderElement>
-        <SliderElement style={{ background: '#4e54c8' }}>
+        <SliderElement>
           <div
             className="content"
-            style={{ animation: actualView === 0 ? 'Appearing 2s 1' : 'none' }}
+            style={{ animation: actualView === 0 ? "Appearing 2s 1" : "none" }}
+          >
+            <div className="mb-12">
+              <h2>Bienvenue !</h2>
+              <p>Que puis-je faire pour vous ?</p>
+            </div>
+            <div id="landing" className="flex-col lg:flex-row">
+              <button
+                onClick={() => setScrollCount(4)}
+                className="text-xl md:text-3xl lg:text-3xl "
+              >
+                <FontAwesomeIcon icon={faLaptop} style={{ color: "#f1c40f" }} />
+                <br />
+                Problème matériel
+              </button>
+
+              <button
+                onClick={() => setScrollCount(8)}
+                className="text-xl md:text-3xl lg:text-3xl "
+              >
+                <FontAwesomeIcon icon={faGears} style={{ color: "#3498db" }} />
+                <br />
+                Problème logiciel
+              </button>
+
+              <button
+                onClick={() => setScrollCount(12)}
+                className="text-xl md:text-3xl lg:text-3xl "
+              >
+                <FontAwesomeIcon
+                  icon={faHandHoldingHand}
+                  style={{ color: "#2ecc71" }}
+                />
+                <br />
+                Besoin d'aide
+              </button>
+            </div>
+          </div>
+          <div className="bcg-star">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+          </div>
+        </SliderElement>
+        <SliderElement style={{ background: "#4e54c8" }} id="hardware">
+          <div
+            className="content"
+            style={{ animation: actualView === 1 ? "Appearing 2s 1" : "none" }}
           >
             <h2>Matériel</h2>
             <p>
@@ -103,6 +157,9 @@ const Home: NextPage = () => {
               <li>Nettoyage</li>
               <li>Amélioration du PC (SSD, GPU, CPU... etc.)</li>
             </ul>
+            <Link href={"/hardware"}>
+              <button>En savoir plus</button>
+            </Link>
           </div>
           <div id="lines-container">
             <div className="lines">
@@ -118,10 +175,10 @@ const Home: NextPage = () => {
             </div>
           </div>
         </SliderElement>
-        <SliderElement>
+        <SliderElement id="software">
           <div
             className="content"
-            style={{ animation: actualView === 1 ? 'Appearing 2s 1' : 'none' }}
+            style={{ animation: actualView === 2 ? "Appearing 2s 1" : "none" }}
           >
             <h2>Logiciel</h2>
             <p>
@@ -136,19 +193,23 @@ const Home: NextPage = () => {
               <li>Récupération de données</li>
               <li>Optimisation des performances PC</li>
             </ul>
+            <Link href={"/software"}>
+              <button>En savoir plus</button>
+            </Link>
           </div>
           <div id="virus_animation"></div>
         </SliderElement>
-        <SliderElement>
+        <SliderElement id="help">
           <div
             className="content"
-            style={{ animation: actualView === 2 ? 'Appearing 2s 1' : 'none' }}
+            style={{ animation: actualView === 3 ? "Appearing 2s 1" : "none" }}
           >
             <h2>Assistance</h2>
             <p>
               Besoin d'un coup de main ? Nous installons ensemble vos
-              équipements (Box, TV, CPL... etc.) Je suis également à votre
-              disposition Pour vous apprendre les fondements de l'informatique.
+              équipements (Box, TV, CPL... etc.) <br /> Je suis également à
+              votre disposition Pour vous apprendre les fondements de
+              l'informatique.
             </p>
             <ul>
               <li>Installation et configuration internet & TV</li>
@@ -157,6 +218,9 @@ const Home: NextPage = () => {
               <li>Prise en main du matériel</li>
               <li>Maintenance</li>
             </ul>
+            <Link href={"/help"}>
+              <button>En savoir plus</button>
+            </Link>
           </div>
           <div className="area">
             <ul className="circles">
@@ -219,7 +283,7 @@ const SliderElement = styled.section`
       text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
     }
     li:before {
-      content: '- ';
+      content: "- ";
     }
 
     h2 {
@@ -231,6 +295,34 @@ const SliderElement = styled.section`
     }
     li {
       font-size: 1.2rem;
+    }
+    button {
+      opacity: 0.8;
+      padding: 15px;
+      background: transparent;
+      color: #fafafa;
+      border: 1px solid #fafafa;
+      border-radius: 5px;
+      margin: auto;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    button:hover {
+      color: #373737;
+      background: #fafafa;
+    }
+
+    #landing {
+      margin-bottom: -30vh;
+      width: 90vw;
+      height: 50vh;
+      display: flex;
+
+      button {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
     }
   }
 `;

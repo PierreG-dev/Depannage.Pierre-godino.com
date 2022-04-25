@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import { useSwipeable, UP, DOWN, SwipeEventData } from "react-swipeable";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { useSwipeable, UP, DOWN, SwipeEventData } from 'react-swipeable';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 const Home: NextPage = () => {
   const [scrollCount, setScrollCount] = useState(0);
@@ -53,16 +53,16 @@ const Home: NextPage = () => {
   };
 
   const handleKeyDown = (event: any) => {
-    if (event.key === "g" || event.key === "G") setScrollCount(0);
+    if (event.key === 'g' || event.key === 'G') setScrollCount(0);
   };
 
   useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener("wheel", handleScroll);
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -78,13 +78,14 @@ const Home: NextPage = () => {
     <MainContainer>
       <div
         id="slider"
-        style={{ transform: `translateY(-${actualView * 100}%)` }}
+        style={{ transform: `translate3d(0,-${actualView * 100}%,0)` }}
         {...swipeHandlers}
       >
-        <SliderElement style={{ background: "#4e54c8" }}>
+        <SliderElement></SliderElement>
+        <SliderElement style={{ background: '#4e54c8' }}>
           <div
             className="content"
-            style={{ animation: actualView === 0 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 0 ? 'Appearing 2s 1' : 'none' }}
           >
             <h2>Matériel</h2>
             <p>
@@ -120,7 +121,7 @@ const Home: NextPage = () => {
         <SliderElement>
           <div
             className="content"
-            style={{ animation: actualView === 1 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 1 ? 'Appearing 2s 1' : 'none' }}
           >
             <h2>Logiciel</h2>
             <p>
@@ -141,7 +142,7 @@ const Home: NextPage = () => {
         <SliderElement>
           <div
             className="content"
-            style={{ animation: actualView === 2 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 2 ? 'Appearing 2s 1' : 'none' }}
           >
             <h2>Assistance</h2>
             <p>
@@ -218,7 +219,7 @@ const SliderElement = styled.section`
       text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
     }
     li:before {
-      content: "- ";
+      content: '- ';
     }
 
     h2 {

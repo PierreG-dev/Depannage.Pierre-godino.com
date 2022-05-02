@@ -147,7 +147,7 @@ const Home: NextPage = () => {
               diagnostic et les pannes en tout genre.
             </p>
             <ul>
-              <li>Diagnostic Panne</li>
+              <li>Diagnostic Panne & réparations</li>
               <li>PC sur mesure</li>
               <li>Conseils d'achats</li>
               <li>

@@ -1,16 +1,16 @@
-import type { NextPage } from "next";
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import { useSwipeable, UP, DOWN, SwipeEventData } from "react-swipeable";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { useSwipeable, UP, DOWN, SwipeEventData } from 'react-swipeable';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLaptop,
   faGears,
   faHandHoldingHand,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const Home: NextPage = () => {
   const [scrollCount, setScrollCount] = useState(0);
@@ -60,16 +60,16 @@ const Home: NextPage = () => {
   };
 
   const handleKeyDown = (event: any) => {
-    if (event.key === "g" || event.key === "G") setScrollCount(0);
+    if (event.key === 'g' || event.key === 'G') setScrollCount(0);
   };
 
   useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener("wheel", handleScroll);
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -92,29 +92,29 @@ const Home: NextPage = () => {
         <SliderElement>
           <div
             className="content"
-            style={{ animation: actualView === 0 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 0 ? 'Appearing 2s 1' : 'none' }}
           >
             <div className="mb-12">
-              <h2>Bienvenue !</h2>
-              <p>Que puis-je faire pour vous ?</p>
+              <h2>{'Bienvenue !'}</h2>
+              <p>{'Que puis-je faire pour vous ?'}</p>
             </div>
             <div id="landing" className="flex-col lg:flex-row">
               <button
                 onClick={() => setScrollCount(4)}
                 className="text-xl md:text-3xl lg:text-3xl "
               >
-                <FontAwesomeIcon icon={faLaptop} style={{ color: "#f1c40f" }} />
+                <FontAwesomeIcon icon={faLaptop} style={{ color: '#f1c40f' }} />
                 <br />
-                Problème matériel
+                {'Problème matériel'}
               </button>
 
               <button
                 onClick={() => setScrollCount(8)}
                 className="text-xl md:text-3xl lg:text-3xl "
               >
-                <FontAwesomeIcon icon={faGears} style={{ color: "#3498db" }} />
+                <FontAwesomeIcon icon={faGears} style={{ color: '#3498db' }} />
                 <br />
-                Problème logiciel
+                {'Problème logiciel'}
               </button>
 
               <button
@@ -123,10 +123,10 @@ const Home: NextPage = () => {
               >
                 <FontAwesomeIcon
                   icon={faHandHoldingHand}
-                  style={{ color: "#2ecc71" }}
+                  style={{ color: '#2ecc71' }}
                 />
                 <br />
-                Besoin d'aide
+                {"Besoin d'aide"}
               </button>
             </div>
           </div>
@@ -136,29 +136,31 @@ const Home: NextPage = () => {
             <div id="stars3"></div>
           </div>
         </SliderElement>
-        <SliderElement style={{ background: "#4e54c8" }} id="hardware">
+        <SliderElement style={{ background: '#4e54c8' }} id="hardware">
           <div
             className="content"
-            style={{ animation: actualView === 1 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 1 ? 'Appearing 2s 1' : 'none' }}
           >
-            <h2>Matériel</h2>
+            <h2>{'Matériel'}</h2>
             <p>
-              J'intervient sur vos PC portables et PC de bureau pour le
-              diagnostic et les pannes en tout genre.
+              {
+                "J'intervient sur vos PC portables et PC de bureau pour le diagnostic et les pannes en tout genre."
+              }
             </p>
             <ul>
-              <li>Diagnostic Panne & réparations</li>
-              <li>PC sur mesure</li>
-              <li>Conseils d'achats</li>
+              <li>{'Diagnostic Panne & réparations'}</li>
+              <li>{'PC sur mesure'}</li>
+              <li>{"Conseils d'achats"}</li>
               <li>
-                Remplacement composant défectueux (clavier, écran, carte
-                vidéo... etc.)
+                {
+                  'Remplacement composant défectueux (clavier, écran, carte vidéo... etc.)'
+                }
               </li>
-              <li>Nettoyage</li>
-              <li>Amélioration du PC (SSD, GPU, CPU... etc.)</li>
+              <li>{'Nettoyage'}</li>
+              <li>{'Amélioration du PC (SSD, GPU, CPU... etc.)'}</li>
             </ul>
-            <Link href={"/hardware"}>
-              <button>En savoir plus</button>
+            <Link href={'/hardware'}>
+              <button>{'En savoir plus'}</button>
             </Link>
           </div>
           <div id="lines-container">
@@ -178,23 +180,24 @@ const Home: NextPage = () => {
         <SliderElement id="software">
           <div
             className="content"
-            style={{ animation: actualView === 2 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 2 ? 'Appearing 2s 1' : 'none' }}
           >
-            <h2>Logiciel</h2>
+            <h2>{'Logiciel'}</h2>
             <p>
-              Ordinateur lent ? Infection par un virus informatique ?
-              j'intervient chez vous rapidement !
+              {
+                "Ordinateur lent ? Infection par un virus informatique ? j'intervient chez vous rapidement !"
+              }
             </p>
             <ul>
-              <li>Nettoyage Malware & Virus informatiques</li>
-              <li>Réinstallation complète Windows toutes versions</li>
-              <li>Pannes logicielles</li>
-              <li>Installation logicielle</li>
-              <li>Récupération de données</li>
-              <li>Optimisation des performances PC</li>
+              <li>{'Nettoyage Malware & Virus informatiques'}</li>
+              <li>{'Réinstallation complète Windows toutes versions'}</li>
+              <li>{'Pannes logicielles'}</li>
+              <li>{'Installation logicielle'}</li>
+              <li>{'Récupération de données'}</li>
+              <li>{'Optimisation des performances PC'}</li>
             </ul>
-            <Link href={"/software"}>
-              <button>En savoir plus</button>
+            <Link href={'/software'}>
+              <button>{'En savoir plus'}</button>
             </Link>
           </div>
           <div id="virus_animation"></div>
@@ -202,24 +205,27 @@ const Home: NextPage = () => {
         <SliderElement id="help">
           <div
             className="content"
-            style={{ animation: actualView === 3 ? "Appearing 2s 1" : "none" }}
+            style={{ animation: actualView === 3 ? 'Appearing 2s 1' : 'none' }}
           >
-            <h2>Assistance</h2>
+            <h2>{'Assistance'}</h2>
             <p>
-              Besoin d'un coup de main ? Nous installons ensemble vos
-              équipements (Box, TV, CPL... etc.) <br /> Je suis également à
-              votre disposition Pour vous apprendre les fondements de
-              l'informatique.
+              {
+                "Besoin d'un coup de main ? Nous installons ensemble vos équipements (Box, TV, CPL... etc.)"
+              }{' '}
+              <br />{' '}
+              {
+                "Je suis également à votre disposition Pour vous apprendre les fondements de l'informatique."
+              }
             </p>
             <ul>
-              <li>Installation et configuration internet & TV</li>
-              <li>Gestion de périphériques</li>
-              <li>Cablâge réseau domestique</li>
-              <li>Prise en main du matériel</li>
-              <li>Maintenance</li>
+              <li>{'Installation et configuration internet & TV'}</li>
+              <li>{'Gestion de périphériques'}</li>
+              <li>{'Cablâge réseau domestique'}</li>
+              <li>{'Prise en main du matériel'}</li>
+              <li>{'Maintenance'}</li>
             </ul>
-            <Link href={"/help"}>
-              <button>En savoir plus</button>
+            <Link href={'/help'}>
+              <button>{'En savoir plus'}</button>
             </Link>
           </div>
           <div className="area">
@@ -283,7 +289,7 @@ const SliderElement = styled.section`
       text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
     }
     li:before {
-      content: "- ";
+      content: '- ';
     }
 
     h2 {

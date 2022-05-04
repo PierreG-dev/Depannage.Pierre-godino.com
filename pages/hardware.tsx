@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
   faBroom,
@@ -9,14 +9,14 @@ import {
   faMagnifyingGlass,
   faCircleInfo,
   faScrewdriver,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const Hardware = () => {
   return (
     <MainContainer>
       <header>
         <div className="content">
-          <h1>Matériel</h1>
+          <h1>{'Matériel'}</h1>
         </div>
         <div id="lines-container">
           <div className="lines">
@@ -38,13 +38,14 @@ const Hardware = () => {
             <span>
               <FontAwesomeIcon icon={faScrewdriverWrench} />
             </span>
-            Diagnostic Panne & réparations
+            {'Diagnostic Panne & réparations'}
           </h2>
           <p>
-            Ordinateur qui a un comportement étrange ? <br /> Plus aussi rapide
-            qu'avant ? <br /> Vous avez peut être un composant défectueux. Pas
-            de panique, nous intervenons rapidement pour réparer tout problème
-            pouvant perturber votre vie numérique.
+            {'Ordinateur qui a un comportement étrange ?'} <br />{' '}
+            {"Plus aussi rapide qu'avant ?"} <br />{' '}
+            {
+              'Vous avez peut être un composant défectueux. Pas de panique, nous intervenons rapidement pour réparer tout problème pouvant perturber votre vie numérique.'
+            }
           </p>
         </section>
         <section>
@@ -52,16 +53,21 @@ const Hardware = () => {
             <span>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </span>
-            PC sur mesure
+            {'PC sur mesure'}
           </h2>
           <p>
-            Envie d'un PC ? <br />
-            Le faire construire revient souvent moins cher que de l'acheter en
-            magasin. <br />
-            De plus, je travaille avec les derniers composants du marché, ce qui
-            n'est pas toujours le cas chez les revendeurs traditionnels ! <br />
-            Alors n'hésitez plus, optez pour du sur mesure en fonction de vos
-            besoins.
+            {"Envie d'un PC ?"} <br />
+            {
+              "Le faire construire revient souvent moins cher que de l'acheter en magasin."
+            }{' '}
+            <br />
+            {
+              "De plus, je travaille avec les derniers composants du marché, ce qui n'est pas toujours le cas chez les revendeurs traditionnels ! "
+            }
+            <br />
+            {
+              "Alors n'hésitez plus, optez pour du sur mesure en fonction de vos besoins."
+            }
           </p>
         </section>
         <section>
@@ -69,15 +75,22 @@ const Hardware = () => {
             <span>
               <FontAwesomeIcon icon={faCircleInfo} />
             </span>
-            Conseis d'achat matériel
+            {"Conseis d'achat matériel"}
           </h2>
           <p>
-            Vous voulez acheter du matériel informatique/résoudre un problème en
-            particulier ? <br />
-            Faites appel à notre expertise pour vous aider a trouver ce qu'il
-            vous faut. <br />
-            /!\ Pas de vente directe de matériel, nous ne fournissons que des
-            conseils /!\
+            {
+              'Vous voulez acheter du matériel informatique/résoudre un problème en particulier ?'
+            }{' '}
+            <br />
+            {
+              "Faites appel à notre expertise pour vous aider a trouver ce qu'il vous faut."
+            }{' '}
+            <br />
+            <strong>
+              {
+                'Pas de vente directe de matériel, nous ne fournissons que des conseils'
+              }
+            </strong>
           </p>
         </section>
         <section>
@@ -85,14 +98,20 @@ const Hardware = () => {
             <span>
               <FontAwesomeIcon icon={faScrewdriver} />
             </span>
-            Remplacement composant défectueux (clavier, écran, carte vidéo...
-            etc.)
+            {
+              'Remplacement composant défectueux (clavier, écran, carte vidéo... etc.)'
+            }
           </h2>
           <p>
-            Besoin de réparations sur votre ordinateur ? <br />
-            Clavier qui ne marche plus, écran cassé, batterie qui ne tient
-            plus... <br />
-            Confiez nous vos appareils, nous les remettrons en état rapidement.
+            {'Besoin de réparations sur votre ordinateur ? '}
+            <br />
+            {
+              'Clavier qui ne marche plus, écran cassé, batterie qui ne tient plus...'
+            }{' '}
+            <br />
+            {
+              'Confiez nous vos appareils, nous les remettrons en état rapidement.'
+            }
           </p>
         </section>
         <section>
@@ -100,13 +119,16 @@ const Hardware = () => {
             <span>
               <FontAwesomeIcon icon={faBroom} />
             </span>
-            Nettoyage
+            {'Nettoyage'}
           </h2>
           <p>
-            La poussière est un des plus grands ennemis de vos appareils: elle
-            favorise la chauffe, l'usure et la consommation électrique. <br />
-            Un petit dépoussiérage de temps en temps est essentiel pour garder
-            votre matériel le plus longtemps possible.
+            {
+              "La poussière est un des plus grands ennemis de vos appareils: elle favorise la chauffe, l'usure et la consommation électrique."
+            }{' '}
+            <br />
+            {
+              'Un petit dépoussiérage de temps en temps est essentiel pour garder votre matériel le plus longtemps possible.'
+            }
           </p>
         </section>
         <section>
@@ -114,13 +136,15 @@ const Hardware = () => {
             <span>
               <FontAwesomeIcon icon={faGaugeHigh} />
             </span>
-            Amélioration PC
+            {'Amélioration PC'}
           </h2>
           <p>
-            Vous voulez améliorer les performances de votre PC ? <br />
-            Passez à la vitesse supérieure avec un disque dur SSD, de la mémoire
-            vive ou bien pourquoi pas un nouveau processeur ! <br />
-            Il y a toujours mieux à faire ! ;)
+            {'Vous voulez améliorer les performances de votre PC ?'} <br />
+            {
+              'Passez à la vitesse supérieure avec un disque dur SSD, de la mémoire vive ou bien pourquoi pas un nouveau processeur !'
+            }{' '}
+            <br />
+            {'Il y a toujours mieux à faire ! ;)'}
           </p>
         </section>
       </main>
@@ -157,7 +181,7 @@ const MainContainer = styled.div`
     }
   }
   main {
-    background: url("/ressources/content-background.svg");
+    background: url('/ressources/content-background.svg');
     background-size: cover;
     display: flex;
     flex-direction: column;

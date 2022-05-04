@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleQuestion,
   faToolbox,
   faBook,
   faHandPeace,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 const Help = () => {
   return (
@@ -15,7 +15,7 @@ const Help = () => {
         <div className="content">
           <h1>Assistance</h1>
         </div>
-        <div className="area" style={{ backgroundPosition: "center" }}>
+        <div className="area" style={{ backgroundPosition: 'center' }}>
           <ul className="circles">
             <li></li>
             <li></li>
@@ -36,11 +36,12 @@ const Help = () => {
             <span>
               <FontAwesomeIcon icon={faToolbox} />
             </span>
-            Cablâge réseau domestique
+            {'Cablâge réseau domestique'}
           </h2>
           <p>
-            Nous pouvons intervenir chez vous pour effectuer l'installation de
-            votre matériel (Box internet, Box TV, Imprimante, CPL...).
+            {
+              "Nous pouvons intervenir chez vous pour effectuer l'installation de votre matériel (Box internet, Box TV, Imprimante, CPL...)."
+            }
           </p>
         </section>
         <section>
@@ -48,12 +49,13 @@ const Help = () => {
             <span>
               <FontAwesomeIcon icon={faHandPeace} />
             </span>
-            Prise en main du matériel
+            {'Prise en main du matériel'}
           </h2>
           <p>
-            Un problème de compréhension de matériel ? <br />
-            n'hésitez pas à faire appel à nous pour la prise en main de matériel
-            informatique ou multimédia.
+            {'Un problème de compréhension de matériel ?'} <br />
+            {
+              "n'hésitez pas à faire appel à nous pour la prise en main de matériel informatique ou multimédia."
+            }
           </p>
         </section>
         <section>
@@ -61,11 +63,11 @@ const Help = () => {
             <span>
               <FontAwesomeIcon icon={faCircleQuestion} />
             </span>
-            Maintenance
+            {'Maintenance'}
           </h2>
           <p>
-            Besoin d'aide avec du matériel que nous avons conseillé ? <br />
-            n'hésitez pas à revenir vers nous.
+            {"Besoin d'aide avec du matériel que nous avons conseillé ?"} <br />
+            {"n'hésitez pas à revenir vers nous."}
           </p>
         </section>
         <section>
@@ -73,12 +75,12 @@ const Help = () => {
             <span>
               <FontAwesomeIcon icon={faBook} />
             </span>
-            Formation à l'informatique
+            {"Formation à l'informatique"}
           </h2>
           <p>
-            Vous voulez vous former aux bases de l'informatique ? <br />
-            Ou même à la programmation pour les plus téméraires ? <br />
-            Comptez sur nous.
+            {"Vous voulez vous former aux bases de l'informatique ?"} <br />
+            {'Ou même à la programmation pour les plus téméraires ?'} <br />
+            {'Comptez sur nous.'}
           </p>
         </section>
       </main>
@@ -115,7 +117,7 @@ const MainContainer = styled.div`
     }
   }
   main {
-    background: url("/ressources/content-background.svg");
+    background: url('/ressources/content-background.svg');
     background-size: cover;
     display: flex;
     flex-direction: column;
